@@ -5,6 +5,9 @@ using UnityEngine;
 public class ThrowableObject : GraableObject
 {
     public float shootForce;
+
+    public bool offsetGrab = true;
+
     private Grabber tempHand;
     private FixedJoint joint;
     private Vector3 previousPosition;
@@ -35,6 +38,11 @@ public class ThrowableObject : GraableObject
 
     public override void OnGrabStart(Grabber hand)
     {
+        if (!offsetGrab)
+        {
+            transform.position = hand.transform.position;
+            transform.rotation = hand.transform.rotation;
+        }
         //base.OnGrabStart(hand);
         //tempHand = hand;
         joint = gameObject.AddComponent<FixedJoint>();
