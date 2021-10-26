@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GraableObject : MonoBehaviour
 {
-    public Color hoveredColor;
+    [SerializeField]private Color hoveredColor;
     private Color defaultColor;
     private Material material;
     // Start is called before the first frame update
