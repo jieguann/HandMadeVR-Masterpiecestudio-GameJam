@@ -23,6 +23,13 @@ public class SnappableObject : ThrowableObject
         }
     }
 
+    public override void OnGrabStart(Grabber hand)
+    {
+        base.OnGrabStart(hand);
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().useGravity = true;
+
+    }
     public override void OnGrabEnd()
     {
         base.OnGrabEnd();
@@ -34,6 +41,11 @@ public class SnappableObject : ThrowableObject
 
             var tempPosition = new Vector3(transform.position.x, transform.position.y, snapZ);
             transform.position = tempPosition;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 
