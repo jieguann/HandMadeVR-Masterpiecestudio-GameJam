@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject targetPrefeb;
     private BoxCollider box;
-    private void SpawnTarget()
+    public void SpawnTarget()
     {
         var newTarget = Instantiate(targetPrefeb, GenerateRandomPosition(),targetPrefeb.transform.rotation);
     }

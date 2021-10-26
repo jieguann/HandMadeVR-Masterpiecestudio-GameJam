@@ -10,10 +10,13 @@ public class Target : MonoBehaviour
 
     private Vector3 StartPosition;
 
+    private GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
         StartPosition = transform.position;
+        manager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -32,7 +35,11 @@ public class Target : MonoBehaviour
         if(food != null)
         {
             Destroy(food.gameObject);
+
+            manager.SpawnTarget();
             Destroy(gameObject);
+
+            //spawn anoter Target
         }
     }
 }
