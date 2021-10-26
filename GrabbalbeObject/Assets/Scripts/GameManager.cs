@@ -4,10 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject targetPrefeb;
+    private BoxCollider box;
+    private void SpawnTarget()
+    {
+        var newTarget = Instantiate(targetPrefeb, GenerateRandomPosition(),targetPrefeb.transform.rotation);
+    }
+
+    private Vector3 GenerateRandomPosition()
+    {
+        var randomPosition = new Vector3(
+            Random.Range(box.bounds.min.x, box.bounds.max.x), 
+            Random.Range(box.bounds.min.y, box.bounds.max.y), 
+            Random.Range(box.bounds.min.z, box.bounds.max.z));
+
+        return randomPosition;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        box = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
