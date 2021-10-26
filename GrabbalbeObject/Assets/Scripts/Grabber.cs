@@ -6,15 +6,15 @@ public class Grabber : MonoBehaviour
 {
     public Animator anim;
     public string gripButton;
-    private GraAbleObject hoveredObject;
-    private GraAbleObject grabObject;
+    private GraableObject hoveredObject;
+    private GraableObject grabObject;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown(gripButton))
@@ -53,7 +53,7 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var grabable = other.GetComponent<GraAbleObject>();
+        var grabable = other.GetComponent<GraableObject>();
         if (grabable != null)
         {
             hoveredObject = grabable;
@@ -63,7 +63,7 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var grabable = other.GetComponent<GraAbleObject>();
+        var grabable = other.GetComponent<GraableObject>();
         if (grabable != null && hoveredObject!=null)
         {
             hoveredObject = null;

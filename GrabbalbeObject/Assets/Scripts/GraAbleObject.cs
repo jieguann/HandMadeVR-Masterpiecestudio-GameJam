@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GraAbleObject : MonoBehaviour
+public class GraableObject : MonoBehaviour
 {
     public Color hoveredColor;
     private Color defaultColor;
