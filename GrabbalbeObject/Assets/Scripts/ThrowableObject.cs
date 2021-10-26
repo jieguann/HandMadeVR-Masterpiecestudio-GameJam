@@ -9,7 +9,8 @@ public class ThrowableObject : GraableObject
     private FixedJoint joint;
     private Vector3 previousPosition;
 
-    private Queue listOfVelocity;
+    private Queue<Vector3> previousVelocities = new Queue<Vector3>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,5 +64,16 @@ public class ThrowableObject : GraableObject
 
         //rememberr the current position to be used in the next iteration
         previousPosition = transform.position;
+
+        // Add the calculated velocity into our queue
+        previousVelocities.Enqueue(velocity);
+
+        //if the size of the quque is greater than a sample size, then remove the first one
+        if(previousVelocities.Count > 20)
+        {
+            previousVelocities.Dequeue();
+        }
+        
+
     }
 }
