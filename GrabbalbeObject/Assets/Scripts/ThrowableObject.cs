@@ -7,10 +7,13 @@ public class ThrowableObject : GraableObject
     public float shootForce;
     private Grabber tempHand;
     private FixedJoint joint;
+    private Vector3 previousPosition;
+
+    private Queue listOfVelocity;
     // Start is called before the first frame update
     void Start()
     {
-         
+        previousPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -46,7 +49,19 @@ public class ThrowableObject : GraableObject
         //tempHand = null;
         Destroy(joint);
 
-        //
+        //Calculate the velocity
 
+        //apply the velocity
+
+    }
+
+    private void FixedUpdate()
+    {
+        //caculate a single velocity
+
+        var velocity = transform.position - previousPosition;
+
+        //rememberr the current position to be used in the next iteration
+        previousPosition = transform.position;
     }
 }
