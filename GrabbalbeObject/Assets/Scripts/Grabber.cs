@@ -34,7 +34,7 @@ public class Grabber : MonoBehaviour
             if (grabObject != null)
             {
                 grabObject.OnGrabEnd();
-                hoveredObject = null;
+                grabObject = null;
             }
         }
 
@@ -57,7 +57,7 @@ public class Grabber : MonoBehaviour
         if (grabable != null)
         {
             hoveredObject = grabable;
-            grabable.OnHoverStart();
+            hoveredObject.OnHoverStart();
         }
     }
 
