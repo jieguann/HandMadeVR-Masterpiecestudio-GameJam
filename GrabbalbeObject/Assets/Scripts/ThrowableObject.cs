@@ -48,12 +48,21 @@ public class ThrowableObject : GraableObject
         //transform.SetParent
         //GetComponent<Rigidbody>().AddForce(tempHand.transform.forward*shootForce);
         //tempHand = null;
-        Destroy(joint);
+        if(joint != null)
+        {
+            Destroy(joint);
 
-        //Calculate the velocity
-
-        //apply the velocity
-
+            //Calculate the velocity
+            var averageVelocity = Vector3.zero;
+            foreach (var velocity in previousVelocities)
+            {
+                averageVelocity += velocity;
+            }
+            averageVelocity /= previousVelocities.Count;
+            //apply the velocity
+            GetComponent<Rigidbody>().velocity = averageVelocity * shootForce;
+        }
+        
     }
 
     private void FixedUpdate()
