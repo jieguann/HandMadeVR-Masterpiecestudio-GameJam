@@ -66,8 +66,9 @@ public class Grabber : MonoBehaviour
         var grabable = other.GetComponent<GraableObject>();
         if (grabable != null && hoveredObject!=null)
         {
-            hoveredObject = null;
             hoveredObject.OnHoverEnd();
+            hoveredObject = null;
+            
         }
     }
 }

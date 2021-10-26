@@ -20,24 +20,24 @@ public class GraableObject : MonoBehaviour
         
     }
 
-    public void OnHoverStart()
+    public virtual void OnHoverStart()
     {
         material.color = hoveredColor;
     }
 
-    public void OnHoverEnd()
+    public virtual void OnHoverEnd()
     {
         material.color = defaultColor;
     }
 
-    public void OnGrabStart(Grabber hand)
+    public virtual void OnGrabStart(Grabber hand)
     {
         transform.SetParent(hand.transform);
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    public void OnGrabEnd()
+    public virtual void OnGrabEnd()
     {
         transform.SetParent(null);
         GetComponent<Rigidbody>().useGravity = true;
