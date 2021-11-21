@@ -43,12 +43,12 @@ public class Grabber : MonoBehaviour
 
     void GripStart()
     {
-        anim.SetBool("Gripped", true);
+        anim.SetBool("GrabLarge", true);
     }
 
     void Release()
     {
-        anim.SetBool("Gripped", false);
+        anim.SetBool("GrabLarge", false);
     }
 
     private void OnTriggerEnter(Collider other)
