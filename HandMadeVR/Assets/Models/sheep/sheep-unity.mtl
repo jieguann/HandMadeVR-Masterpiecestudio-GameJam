@@ -1,0 +1,35 @@
+# sheep-unity 
+# November 20, 2021 
+# 3:57:14 PM 
+#-------
+
+newmtl MeshLayer_Mesh_mtl
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.8
+illum 2
+d 1
+Ns 500
+map_Kd   MeshLayer_Mesh_BaseColor.png
+bump   MeshLayer_Mesh_Normal.png
+map_Ke   MeshLayer_Mesh_Emissive.png
+newmtl MeshLayer_2_Mesh_2_mtl
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.8
+illum 2
+d 1
+Ns 500
+map_Kd   MeshLayer_2_Mesh_2_BaseColor.png
+bump   MeshLayer_2_Mesh_2_Normal.png
+map_Ke   MeshLayer_2_Mesh_2_Emissive.png
+newmtl MeshLayer_3_Mesh_3_mtl
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.8
+illum 2
+d 1
+Ns 500
+map_Kd   MeshLayer_3_Mesh_3_BaseColor.png
+bump   MeshLayer_3_Mesh_3_Normal.png
+map_Ke   MeshLayer_3_Mesh_3_Emissive.png
