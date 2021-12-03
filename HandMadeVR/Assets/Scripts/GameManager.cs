@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject PlayerPosition;
     private BoxCollider box;
 
+    GameObject temp;
+
     public List<GameObject> target = new List<GameObject>();
 
     public int maxofPrefeb;
@@ -28,7 +30,14 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i< maxofPrefeb; i++) {
             var randomIndex = Random.Range(0, 2);
             print(randomIndex);
-            target.Add(Instantiate(targetPrefeb[randomIndex], GenerateRandomPosition(), targetPrefeb[randomIndex].transform.rotation));
+            //remove
+            /*
+            temp = Instantiate(targetPrefeb[randomIndex], GenerateRandomPosition(), targetPrefeb[randomIndex].transform.rotation);
+            temp.tag = "target"+i.ToString();
+            target.Add(temp);
+            */
+            ///uncomment
+           target.Add(Instantiate(targetPrefeb[randomIndex], GenerateRandomPosition(), targetPrefeb[randomIndex].transform.rotation));
         }
         
         //SpawnTarget();
@@ -37,9 +46,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+   
         for (int i = 0; i < maxofPrefeb; i++)
         {
+        if(target[i] != null){
             target[i].transform.LookAt(PlayerPosition.transform);
+        }
         }
     }
 }

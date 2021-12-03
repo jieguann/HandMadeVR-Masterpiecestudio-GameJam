@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7908729379802855057}
   - component: {fileID: 7908729379802855058}
+  - component: {fileID: 2601935399550570450}
   m_Layer: 0
   m_Name: Jellyfish
   m_TagString: Untagged
@@ -138,9 +139,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42a70bb20c5d844b9c21f831f133ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 0.4
   moveAmount: 4
   spinUpAmount: 1
+--- !u!65 &2601935399550570450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7908729379802855056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.311641, z: 0.67963064}
+  m_Center: {x: 0, y: 0.15582049, z: -0.16018468}
 --- !u!1001 &7908729378263359943
 PrefabInstance:
   m_ObjectHideFlags: 0
