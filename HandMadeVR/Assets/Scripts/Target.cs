@@ -36,7 +36,7 @@ public class Target : MonoBehaviour
         {
             Destroy(food.gameObject);
 
-            manager.SpawnTarget();
+            //manager.SpawnTarget();
             Destroy(gameObject);
 
             //spawn anoter Target
