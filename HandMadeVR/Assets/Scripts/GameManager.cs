@@ -49,9 +49,9 @@ public class GameManager : MonoBehaviour
    
         for (int i = 0; i < maxofPrefeb; i++)
         {
-        if(target[i] != null){
-            target[i].transform.LookAt(PlayerPosition.transform);
-        }
+            if(target[i] != null){
+                target[i].transform.LookAt(PlayerPosition.transform);
+            }
         }
     }
 }
