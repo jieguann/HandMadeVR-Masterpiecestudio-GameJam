@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    //public GameManager gameManager;
     public float moveSpeed;
     public float moveAmount;
     public float spinUpAmount;
@@ -36,8 +37,12 @@ public class Target : MonoBehaviour
         {
             Destroy(food.gameObject);
 
-            manager.SpawnTarget();
+            //manager.SpawnTarget();
+           // manager.target[gameObject.gettag];
             Destroy(gameObject);
+
+            // remove SOS
+           
 
             //spawn anoter Target
         }
